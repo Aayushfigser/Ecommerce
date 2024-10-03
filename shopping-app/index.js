@@ -25,7 +25,8 @@ app.use('/api/v1.0/shopping', require('./routes/orderRoutes'));
 app.get('/health', (req, res) => {
   res.status(200).send('OK');
 });
-app.use(express.static(path.join(__dirname, 'build')));
+app.use(express.static(path.join(__dirname, 'frontend/build')));
+
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
